@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import api from "../../../utils/axios";
 import { toast } from "sonner";
+import Logo from "../../common/Logo";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -47,10 +48,8 @@ const Login = () => {
   return (
     <main className="min-h-[calc(100vh-64px)] flex items-center justify-center p-4 bg-slate-50">
       <div className="w-full max-w-md">
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-12 h-12 bg-slate-900 rounded-xl mb-4">
-            <span className="text-white font-bold text-2xl">E</span>
-          </div>
+        <div className="text-center mb-8 flex flex-col items-center">
+          <Logo size="lg" className="mb-4" />
           <h1 className="text-2xl font-bold text-slate-900">Welcome Back</h1>
           <p className="text-slate-500">Sign in to manage your organizational payroll.</p>
         </div>

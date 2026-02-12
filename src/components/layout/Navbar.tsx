@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
+import Logo from "../common/Logo";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -33,13 +34,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center gap-8">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">E</span>
-              </div>
-              <span className="text-xl font-bold tracking-tight text-slate-900">
-                EPMS
-              </span>
+            <Link to="/">
+              <Logo />
             </Link>
 
             {isLoggedIn && (

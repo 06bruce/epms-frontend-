@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Home = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
   return (
     <div className="min-h-[calc(100vh-64px)] flex flex-col items-center justify-center px-4 bg-white">
       <div className="max-w-4xl w-full text-center">
@@ -18,14 +27,25 @@ const Home = () => {
           The all-in-one platform to manage employees, departments, and payroll with precision. Built for modern businesses that value clarity and efficiency.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link to="/department" className="btn-primary w-full sm:w-auto px-8 py-3 text-lg">
-            Manage Department
-          </Link>
-          <Link to="/employee" className="btn-secondary w-full sm:w-auto px-8 py-3 text-lg">
-            Manage Employee
-          </Link>
-        </div>
+        {isLoggedIn ? (
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link to="/department" className="btn-primary w-full sm:w-auto px-8 py-3 text-lg">
+              Manage Department
+            </Link>
+            <Link to="/employee" className="btn-secondary w-full sm:w-auto px-8 py-3 text-lg">
+              Manage Employee
+            </Link>
+          </div>
+        ) : (
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link to="/signup" className="btn-primary w-full sm:w-auto px-8 py-3 text-lg">
+              Start Free Trial
+            </Link>
+            <Link to="/login" className="btn-secondary w-full sm:w-auto px-8 py-3 text-lg">
+              Sign In to Dashboard
+            </Link>
+          </div>
+        )}
 
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-left border-t border-slate-100 pt-16">
           <div>

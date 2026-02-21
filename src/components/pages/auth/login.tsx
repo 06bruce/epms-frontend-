@@ -34,8 +34,8 @@ const Login = () => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      toast.success("Login successful!");
-      navigate("/report");
+      toast.success("Login successful! Redirecting to Department page...");
+      navigate("/department");
       window.location.reload();
     } catch (error: any) {
       const message = error.response?.data?.message || "Login failed. Please check your credentials.";

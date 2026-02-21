@@ -49,8 +49,8 @@ const SignUp = () => {
         fullName: formData.fullName
       });
 
-      toast.success("Account created successfully! Please login.");
-      navigate("/login");
+      toast.success("Account created successfully! Redirecting to Department page...");
+      navigate("/department");
     } catch (error: any) {
       const message = error.response?.data?.message || "Signup failed. Please try again.";
       toast.error(message);

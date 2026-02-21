@@ -19,11 +19,11 @@ const Home = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link to="/signup" className="btn-primary w-full sm:w-auto px-8 py-3 text-lg">
-            Start Free Trial
+          <Link to="/department" className="btn-primary w-full sm:w-auto px-8 py-3 text-lg">
+            Manage Department
           </Link>
-          <Link to="/login" className="btn-secondary w-full sm:w-auto px-8 py-3 text-lg">
-            Sign In to Dashboard
+          <Link to="/employee" className="btn-secondary w-full sm:w-auto px-8 py-3 text-lg">
+            Manage Employee
           </Link>
         </div>
 

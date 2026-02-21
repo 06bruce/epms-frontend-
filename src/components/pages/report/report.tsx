@@ -8,6 +8,8 @@ const Report = () => {
   const [departments, setDepartments] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  // Force rebuild - v2
+
   const [filters, setFilters] = useState({
     employeeNumber: "",
     month: "",
